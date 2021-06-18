@@ -26,3 +26,7 @@ Coil 5 ---> relay 5
 Coil 6 ---> relay 6
 Coil 7 ---> relay 7
 Coil 8 ---> relay 8
+
+### Flux diagram
+
+![alt text](https://github.com/giulicrenna/Ladder-driver-for-Arduino/blob/main/lib/image.jpg?raw=true)
