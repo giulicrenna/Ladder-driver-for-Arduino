@@ -1,17 +1,15 @@
 from selenium import webdriver
-import time 
+from lib.driver import controller
+import time
 
 driver = webdriver.Chrome("./chromedriver.exe")
 driver.get("https://www.plcfiddle.com/")
 
+
 def main_function():
-
-    ote = driver.find_elements_by_link_text
-    print(ote)
     output = driver.find_elements_by_css_selector("div.ote.energized")
-    
-    num = 1
 
+    num = 1
     list_ = []
 
     def get_path(t):
@@ -36,32 +34,33 @@ def main_function():
                              };
                              return gPt(arguments[0]).toLowerCase();""", t)
         return path
-    
+
     for i in output:
         Xpath = str(get_path(i))
         Xpath = Xpath[0:49]
         if Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[1]':
-            print("Output energized 1")
+            controller('a')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[2]':
-            print("Output energized 2")
+            controller('b')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[3]':
-            print("Output energized 3")
+            controller('c')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[4]':
-            print("Output energized 4")
+            controller('d')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[5]':
-            print("Output energized 5")
+            controller('e')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[6]':
-            print("Output energized 6")
+            controller('f')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[7]':
-            print("Output energized 7")
+            controller('g')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[8]':
-            print("Output energized 8")
+            controller('h')
 
-if __name__ == "__main__":   #Put main_function() in a while loop for conctant read
+            
+if __name__ == "__main__":  # Put main_function() in a while loop for conctant read
     while True:
         main_function()
-        time.sleep(4)
-    
+        time.sleep(0.5)
+
 #   id("app-body")/div[1]/div[2]/div[2]/div[2]/div[1]/div[5]/div[1]/div[1]/div[2]
 
 #   //*[@id="app-body"]/div/div[2]/div[2]/div[2]/div[1]/div[4]/div/div/div[2]
