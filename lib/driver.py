@@ -1,35 +1,46 @@
-import serial
+import serial, time
 
 serial_port = serial.Serial('COM3', 9600)
+time.sleep(2)
+
 
 def controller(input_):
     if input_ == 'ON1':
-        val = 'a'
-        serial_port.write(val)
+        serial_port.write(b'a')
     elif input_ == 'ON2':
-        val = 'b'
-        serial_port.write(val)
+        serial_port.write(b'b')
     elif input_ == 'ON3':
-        val = 'c'
-        serial_port.write(val)
+        serial_port.write(b'c')
     elif input_ == 'ON4':
-        val = 'd'
-        serial_port.write(val)
+        serial_port.write(b'd')
     elif input_ == 'ON5':
-        val = 'e'
-        serial_port.write(val)
+        serial_port.write(b'e')
     elif input_ == 'ON6':
-        val = 'f'
-        serial_port.write(val)
+        serial_port.write(b'f')
     elif input_ == 'ON7':
-        val = 'g'
-        serial_port.write(val)
+        serial_port.write(b'g')
     elif input_ == 'ON8':
-        val = 'h'
-        serial_port.write(val)
+        serial_port.write(b'h')
+
+    elif input_ == 'OFF1':
+        serial_port.write(b'i')
+    elif input_ == 'OFF2':
+        serial_port.write(b'j')
+    elif input_ == 'OFF3':
+        serial_port.write(b'k')
+    elif input_ == 'OFF4':
+        serial_port.write(b'l')
+    elif input_ == 'OFF5':
+        serial_port.write(b'm')
+    elif input_ == 'OFF6':
+        serial_port.write(b'n')
+    elif input_ == 'OFF7':
+        serial_port.write(b'o')
+    elif input_ == 'OFF8':
+        serial_port.write(b'p')
 
 
-if __name__ == "__main__":  
-    controller()
+controller('OFF1')
+
 
 

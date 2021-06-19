@@ -7,7 +7,14 @@ driver.get("https://www.plcfiddle.com/")
 
 
 def main_function():
+    not_energized = driver.find_elements_by_css_selector("div.ote")
     output = driver.find_elements_by_css_selector("div.ote.energized")
+
+    diff = []
+
+    for i in not_energized:
+        if not i in output:
+            diff.append(i)
 
     num = 1
     list_ = []
@@ -39,23 +46,42 @@ def main_function():
         Xpath = str(get_path(i))
         Xpath = Xpath[0:49]
         if Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[1]':
-            controller('a')
+            controller('ON1')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[2]':
-            controller('b')
+            controller('ON2')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[3]':
-            controller('c')
+            controller('ON3')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[4]':
-            controller('d')
+            controller('ON4')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[5]':
-            controller('e')
+            controller('ON5')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[6]':
-            controller('f')
+            controller('ON6')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[7]':
-            controller('g')
+            controller('ON7')
         elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[8]':
-            controller('h')
-
+            controller('ON8')
             
+    for i in diff:
+        Xpath = str(get_path(i))
+        Xpath = Xpath[0:49]
+        if Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[1]':
+            controller('OFF1')
+        elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[2]':
+            controller('OFF2')
+        elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[3]':
+            controller('OFF3')
+        elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[4]':
+            controller('OFF4')
+        elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[5]':
+            controller('OFF5')
+        elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[6]':
+            controller('OFF6')
+        elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[7]':
+            controller('OFF7')
+        elif Xpath == 'id("app-body")/div[1]/div[2]/div[2]/div[2]/div[8]':
+            controller('OFF8')
+
 if __name__ == "__main__":  # Put main_function() in a while loop for conctant read
     while True:
         main_function()
