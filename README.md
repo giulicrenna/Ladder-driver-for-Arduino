@@ -18,6 +18,6 @@ pip install -r requirements.txt
 4) Start creating your ladder logic.
 5) Then when it's ended switch on the coils and see the magic.
 
-### Flux diagram
+### This is an explanatory diagram not a flux diagram
 
 ![alt text](https://github.com/giulicrenna/Ladder-driver-for-Arduino/blob/main/lib/image.jpg?raw=true)
